@@ -1,0 +1,44 @@
+package org.example.state;
+
+import org.example.Flipper;
+
+public class PlayingState extends State {
+
+    public PlayingState(Flipper flipper) {
+        super(flipper);
+    }
+
+    @Override
+    public void pressStart() {
+        System.out.println("What are you doing? The ball is already rolling. Keep your eyes on the ball and play instead of fumbling with the start button!");
+    }
+
+    @Override
+    public void flipLeft() {
+
+        getFlipper().decrementBalls();
+        countBalls();
+    }
+
+    @Override
+    public void flipRight() {
+
+        getFlipper().decrementBalls();
+        countBalls();
+    }
+
+    @Override
+    public void insertCoin() {
+        super.insertCoin();
+        System.out.println("What are you doing? This flipper isn't as corrupt as the US president! You won't win by throwing money at it. Now you have even more credit but you will lose the ball if you don't pay attention!");
+    }
+
+    public void countBalls() {
+        int balls = getFlipper().getBalls();
+        if (balls == 0) {
+            System.out.println("Well, that was your last ball. GAME OVER, sucker! You got a bunch of points. Press start to see how many points you got.");
+            getFlipper().decrementCredits();
+            getFlipper().setState(new EndState(getFlipper()));
+        }
+    }
+}
