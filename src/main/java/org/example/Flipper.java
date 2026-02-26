@@ -23,6 +23,7 @@ public class Flipper {
 
     public static void main(String[] args) {
         Flipper flipper = new Flipper();
+        flipper.initialise();
         flipper.play();
 
     }
@@ -80,11 +81,13 @@ public class Flipper {
 
     public void incrementPoints() {points++;}
 
-    public void addPoints(int points) {this.points += points;}
+    public void addPoints(int pointsToAdd) {this.points += pointsToAdd;}
 
-    public void removePoints(int points) {this.points -= points;}
+    public void removePoints(int pointsToRemove) {this.points -= pointsToRemove;}
 
     public void resetPoints() {points=0;}
+
+    public List<Element> getElements() {return elements;}
 
 }
 
