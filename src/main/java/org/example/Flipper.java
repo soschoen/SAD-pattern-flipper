@@ -1,12 +1,11 @@
 package org.example;
 
-import org.example.elements.AmbivalentAstralAnomalyElement;
-import org.example.elements.BlackHoleElement;
-import org.example.elements.Element;
-import org.example.elements.LuckyStarElement;
+import org.example.elements.*;
+import org.example.mediator.StarsMediator;
 import org.example.state.State;
 import org.example.state.NoCreditState;
 
+import javax.print.attribute.standard.Media;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,6 +17,7 @@ public class Flipper {
     private int points;
     private Scanner scanner = new Scanner(System.in);
     private List<Element> elements = new ArrayList<>();
+
 
     Flipper() {
         this.state = new NoCreditState(this);
@@ -51,10 +51,20 @@ public class Flipper {
     }
 
     public void initialise(){
-        Element luckyStar = new LuckyStarElement(this);
-        this.elements.add(luckyStar);
-        Element ambivalentAstralAnomaly = new AmbivalentAstralAnomalyElement(this);
-        this.elements.add(ambivalentAstralAnomaly);
+        StarsMediator starsMediator = new StarsMediator();
+        LuckyStarElement luckyStar1 = new LuckyStarElement(this, starsMediator);
+        this.elements.add(luckyStar1);
+        starsMediator.addLuckyStar(luckyStar1);
+        LuckyStarElement luckyStar2 = new LuckyStarElement(this, starsMediator);
+        this.elements.add(luckyStar2);
+        LuckyStarElement luckyStar3 = new LuckyStarElement(this, starsMediator);
+        this.elements.add(luckyStar3);
+        starsMediator.addLuckyStar(luckyStar3);
+        ShootingStarElement shootingStar = new ShootingStarElement(this, starsMediator);
+        this.elements.add(shootingStar);
+        starsMediator.setShootingStar(shootingStar);
+        AmbivalentAstralAnomalyElement astralAnomaly = new AmbivalentAstralAnomalyElement(this);
+        this.elements.add(astralAnomaly);
         Element blackHole = new BlackHoleElement(this);
         this.elements.add(blackHole);
     }
