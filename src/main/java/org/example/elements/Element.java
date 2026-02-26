@@ -1,6 +1,7 @@
 package org.example.elements;
 
 import org.example.commands.Command;
+import org.example.visitor.Visitor;
 
 public abstract class Element {
     private Command command;
@@ -14,5 +15,7 @@ public abstract class Element {
     public void setCommand(Command command) {
         this.command = command;
     }
+
+
 
 }

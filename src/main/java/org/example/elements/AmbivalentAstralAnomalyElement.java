@@ -2,9 +2,15 @@ package org.example.elements;
 
 import org.example.Flipper;
 import org.example.commands.MacroCommands.GainSomeLoseSomeMacroCommand;
+import org.example.visitor.Visitor;
 
 public class AmbivalentAstralAnomalyElement extends Element{
     public AmbivalentAstralAnomalyElement(Flipper flipper) {
         this.setCommand(new GainSomeLoseSomeMacroCommand(flipper, "~~~~~~~~~You passed through an ambivalent astral anomaly~~~~~~~ You lost some points but for some reason got an extra ball.~~~~~~~", 200));
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

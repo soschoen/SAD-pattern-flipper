@@ -3,6 +3,7 @@ package org.example.elements;
 import org.example.Flipper;
 import org.example.commands.MacroCommands.SuperPrizeCommand;
 import org.example.mediator.Mediator;
+import org.example.visitor.Visitor;
 
 public class ShootingStarElement extends Element{
     private boolean active = false;
@@ -24,5 +25,10 @@ public class ShootingStarElement extends Element{
         } else {
             System.out.println("°°°°°Wish upon a falling star...°°°° Keep wishing until you have collected all lucky stars!°°°°°°");
         }
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }
