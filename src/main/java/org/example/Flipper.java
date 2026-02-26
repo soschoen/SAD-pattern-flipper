@@ -1,8 +1,12 @@
 package org.example;
 
+import org.example.elements.Element;
+import org.example.elements.LuckyStarElement;
 import org.example.state.State;
 import org.example.state.NoCreditState;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Flipper {
@@ -11,6 +15,7 @@ public class Flipper {
     private int balls;
     private int points;
     private Scanner scanner = new Scanner(System.in);
+    private List<Element> elements = new ArrayList<>();
 
     Flipper() {
         this.state = new NoCreditState(this);
@@ -18,6 +23,7 @@ public class Flipper {
 
     public static void main(String[] args) {
         Flipper flipper = new Flipper();
+        flipper.initialise();
         flipper.play();
 
     }
@@ -42,6 +48,11 @@ public class Flipper {
         }
     }
 
+    public void initialise(){
+        Element luckyStar = new LuckyStarElement(this);
+        this.elements.add(luckyStar);
+    }
+
     public int getCredits() {return credits;}
 
     public void incrementCredits() {
@@ -60,6 +71,8 @@ public class Flipper {
 
     public void decrementBalls() {balls--;}
 
+    public void incrementBalls() {balls++;}
+
     public void resetBalls() {balls=3;}
 
     public int getPoints() {return points;}
@@ -68,7 +81,13 @@ public class Flipper {
 
     public void incrementPoints() {points++;}
 
+    public void addPoints(int pointsToAdd) {this.points += pointsToAdd;}
+
+    public void removePoints(int pointsToRemove) {this.points -= pointsToRemove;}
+
     public void resetPoints() {points=0;}
+
+    public List<Element> getElements() {return elements;}
 
 }
 

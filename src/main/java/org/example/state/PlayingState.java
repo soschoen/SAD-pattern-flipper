@@ -1,8 +1,14 @@
 package org.example.state;
 
 import org.example.Flipper;
+import org.example.elements.Element;
+
+import java.util.Collections;
+import java.util.List;
 
 public class PlayingState extends State {
+
+    private List<Element> elements = getFlipper().getElements();
 
     public PlayingState(Flipper flipper) {
         super(flipper);
@@ -15,15 +21,16 @@ public class PlayingState extends State {
 
     @Override
     public void flipLeft() {
-
-        getFlipper().decrementBalls();
+        Collections.shuffle(elements);
+        elements.getFirst().hit();
         countBalls();
     }
 
     @Override
     public void flipRight() {
-
-        getFlipper().decrementBalls();
+        countBalls();
+        Collections.shuffle(elements);
+        elements.getLast().hit();
         countBalls();
     }
 
