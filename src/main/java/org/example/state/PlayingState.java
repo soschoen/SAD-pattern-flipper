@@ -1,6 +1,7 @@
 package org.example.state;
 
 import org.example.Flipper;
+import org.example.commands.TextOutputCommand;
 import org.example.elements.Element;
 
 import java.util.Collections;
@@ -23,6 +24,7 @@ public class PlayingState extends State {
     public void flipLeft() {
         Collections.shuffle(elements);
         elements.getFirst().hit();
+        new TextOutputCommand("Total points: "+ getFlipper().getPoints()+"\n Number of balls: "+getFlipper().getBalls()).execute();
         countBalls();
     }
 
@@ -31,6 +33,7 @@ public class PlayingState extends State {
         countBalls();
         Collections.shuffle(elements);
         elements.getLast().hit();
+        new TextOutputCommand("Total points: "+ getFlipper().getPoints()+"\nNumber of balls: "+getFlipper().getBalls()).execute();
         countBalls();
     }
 

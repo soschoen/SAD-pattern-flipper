@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.elements.AmbivalentAstralAnomalyElement;
+import org.example.elements.BlackHoleElement;
 import org.example.elements.Element;
 import org.example.elements.LuckyStarElement;
 import org.example.state.State;
@@ -51,6 +53,10 @@ public class Flipper {
     public void initialise(){
         Element luckyStar = new LuckyStarElement(this);
         this.elements.add(luckyStar);
+        Element ambivalentAstralAnomaly = new AmbivalentAstralAnomalyElement(this);
+        this.elements.add(ambivalentAstralAnomaly);
+        Element blackHole = new BlackHoleElement(this);
+        this.elements.add(blackHole);
     }
 
     public int getCredits() {return credits;}
@@ -76,10 +82,6 @@ public class Flipper {
     public void resetBalls() {balls=3;}
 
     public int getPoints() {return points;}
-
-    public void decrementPoints() {points--;}
-
-    public void incrementPoints() {points++;}
 
     public void addPoints(int pointsToAdd) {this.points += pointsToAdd;}
 
