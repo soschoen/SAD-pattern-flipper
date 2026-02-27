@@ -1,4 +1,4 @@
-package org.example.commands.MacroCommands;
+package org.example.commands.macroCommands;
 
 import org.example.Flipper;
 import org.example.commands.ExtraBallCommand;

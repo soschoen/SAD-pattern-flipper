@@ -1,7 +1,7 @@
 package org.example.elements;
 
 import org.example.Flipper;
-import org.example.commands.MacroCommands.GainSomeLoseSomeMacroCommand;
+import org.example.commands.macroCommands.GainSomeLoseSomeMacroCommand;
 import org.example.visitor.Visitor;
 
 public class AmbivalentAstralAnomalyElement extends Element{

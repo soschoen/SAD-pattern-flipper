@@ -1,10 +1,8 @@
-package org.example.commands.MacroCommands;
+package org.example.commands.macroCommands;
 
 import org.example.Flipper;
 import org.example.commands.AddPointsCommand;
 import org.example.commands.ExtraBallCommand;
-import org.example.commands.RemovePointsCommand;
-import org.example.commands.TextOutputCommand;
 
 public class SuperPrizeCommand extends MacroCommand{
     public SuperPrizeCommand(Flipper flipper, String text, int pointsToAdd) {

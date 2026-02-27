@@ -67,6 +67,8 @@ public class Flipper {
         this.elements.add(astralAnomaly);
         Element blackHole = new BlackHoleElement(this);
         this.elements.add(blackHole);
+        Element ufo = new UfoElement(this);
+        this.elements.add(ufo);
     }
 
     public int getCredits() {return credits;}
