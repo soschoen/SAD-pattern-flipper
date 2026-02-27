@@ -1,14 +1,15 @@
 package org.example.state;
 
 import org.example.Flipper;
+import org.example.scoreDisplayFactory.ScoreDisplay;
+import org.example.scoreDisplayFactory.ScoreDisplayFactory;
 
 public class EndState extends State {
     public EndState(Flipper flipper) { super(flipper); }
 
     @Override
     public void pressStart() {
-        int points = getFlipper().getPoints();
-        System.out.println("There you go: " + points + "points. Are you happy now?");
+        printEndScore(getFlipper().getPoints());
 
         if(getFlipper().getCredits() == 0){
             System.out.println("You're broke. If you want to continue playing, you will need to insert a coin.");
@@ -18,6 +19,11 @@ public class EndState extends State {
             System.out.println("You've got "+credits+" credits left. Press start to play again.");
             getFlipper().setState(new CreditState(getFlipper()));
         }
+    }
+
+    public void printEndScore(int totalPoints) {
+        ScoreDisplay display = ScoreDisplayFactory.getDisplay(totalPoints);
+        display.show(totalPoints);
     }
 
     @Override

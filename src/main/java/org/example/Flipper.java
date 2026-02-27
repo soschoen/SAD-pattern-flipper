@@ -65,8 +65,10 @@ public class Flipper {
         starsMediator.setShootingStar(shootingStar);
         AmbivalentAstralAnomalyElement astralAnomaly = new AmbivalentAstralAnomalyElement(this);
         this.elements.add(astralAnomaly);
-        Element blackHole = new BlackHoleElement(this);
-        this.elements.add(blackHole);
+        Element blackHole1 = new BlackHoleElement(this);
+        this.elements.add(blackHole1);
+        Element blackHole2 = new BlackHoleElement(this);
+        this.elements.add(blackHole2);
         Element ufo = new UfoElement(this);
         this.elements.add(ufo);
     }

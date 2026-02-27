@@ -46,7 +46,7 @@ public class PlayingState extends State {
     public void countBalls() {
         int balls = getFlipper().getBalls();
         if (balls <= 0) {
-            System.out.println("Well, that was your last ball. GAME OVER, sucker! You got a bunch of points. Press start to see how many points you got.");
+            System.out.println("Well, that was your last ball. GAME OVER, sucker! Press start to see your end score.");
             getFlipper().decrementCredits();
             getFlipper().setState(new EndState(getFlipper()));
         }
