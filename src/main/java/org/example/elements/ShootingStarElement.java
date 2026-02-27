@@ -1,7 +1,7 @@
 package org.example.elements;
 
 import org.example.Flipper;
-import org.example.commands.MacroCommands.SuperPrizeCommand;
+import org.example.commands.macroCommands.SuperPrizeCommand;
 import org.example.mediator.Mediator;
 import org.example.visitor.Visitor;
 
