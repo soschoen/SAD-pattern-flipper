@@ -16,6 +16,8 @@ public abstract class Element {
         this.command = command;
     }
 
+    public abstract void accept(Visitor visitor);
+
 
 
 }
