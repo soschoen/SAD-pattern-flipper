@@ -1,13 +1,5 @@
 package org.example.commands.alienCommands;
 
-import org.example.Flipper;
-import org.example.elements.Element;
-import org.example.elements.LuckyStarElement;
-import org.example.elements.ShootingStarElement;
-import org.example.visitor.ResetVisitor;
-import org.example.visitor.Visitor;
-
-
 // The purpose of this class is to demonstrate the adapter pattern.
 // Functionally, it is a command. Yet it does not implement the interface "Command".
 // Thus, technically it is not a command.
@@ -29,6 +21,4 @@ public class AlienAbduction {
 
     public int getLlabsToLose() { return LLabsToLose; }
     public String getText() { return text; }
-    public void setText(String text) { this.text = text; }
-    public void setLlabsToLose(int llabsToLose) {this.LLabsToLose = llabsToLose; }
 }

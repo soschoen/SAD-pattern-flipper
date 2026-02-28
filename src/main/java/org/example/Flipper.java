@@ -5,7 +5,6 @@ import org.example.mediator.StarsMediator;
 import org.example.state.State;
 import org.example.state.NoCreditState;
 
-import javax.print.attribute.standard.Media;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

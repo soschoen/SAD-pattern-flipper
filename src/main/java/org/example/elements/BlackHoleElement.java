@@ -1,7 +1,6 @@
 package org.example.elements;
 
 import org.example.Flipper;
-import org.example.commands.AddPointsCommand;
 import org.example.commands.LoseBallCommand;
 import org.example.visitor.Visitor;
 

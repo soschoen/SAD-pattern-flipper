@@ -1,6 +1,5 @@
 package org.example.commands;
 
-import org.example.Flipper;
 
 public class TextOutputCommand implements Command {
     private String text;
